@@ -152,9 +152,11 @@ agui_agent = StrandsAgent(
 )
 
 # Create the FastAPI app
-app = create_strands_app(agui_agent, "/")
+agent_path = os.getenv("AGENT_PATH", "/")
+app = create_strands_app(agui_agent, agent_path)
 
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    port  = int(os.getenv("AGENT_PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
