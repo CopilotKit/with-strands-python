@@ -1,0 +1,12 @@
+{
+  "name": "@repo/agent",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "uv run main.py",
+    "postinstall": "uv sync"
+  },
+  "devDependencies": {
+    "@langchain/langgraph-cli": "^1.1.12"
+  }
+}
